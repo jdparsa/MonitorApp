@@ -1,0 +1,38 @@
+/* ==========================================================================
+   1. TAILWIND CORE ENGINE IMPORT 
+   ========================================================================== */
+@import "tailwindcss";
+
+/* ==========================================================================
+   2. GLOBAL LAYOUT NORMALIZATION & CANVAS RESETS
+   ========================================================================== */
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  
+  /* Matches your global light-gray background to prevent white flashing on reload */
+  background-color: #f3f4f6; 
+  
+  /* Crisp typography optimizations for modern operating systems */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   3. DEFENSIVE METRIC BOUNDARY CONTROLS
+   ========================================================================== */
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+/* Ensure the root Angular element scales to full viewport height */
+app-root {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+}

@@ -1,0 +1,45 @@
+<div class="monitor-container">
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <p>Querying telemetry array...</p>
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div class="error-banner">
+      <p>{{ errorMessage }}</p>
+      <button (click)="startTelemetryPolling()">Retry Connection</button>
+    </div>
+  }
+
+  @if (!isLoading && !errorMessage) {
+    <div class="dashboard-grid">
+      
+      @for (item of monitors; track item.name) {
+        <div class="monitor-card">
+          <div class="card-header">
+            <h3>{{ item.name }}</h3>
+            <span class="badge" [class.active]="item.isActive">
+              {{ item.isActive ? 'IN USE' : 'IDLE' }}
+            </span>
+          </div>
+          
+          <div class="card-body">
+            <h4>Access Registry:</h4>
+            
+            @if (item.activeApps && item.activeApps.length > 0) {
+              <ul>
+                @for (app of item.activeApps; track app) {
+                  <li>{{ app }}</li>
+                }
+              </ul>
+            } @else {
+              <p class="muted-text">No active execution commands logged.</p>
+            }
+          </div>
+        </div>
+      }
+
+    </div>
+  }
+</div>

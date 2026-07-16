@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PrivacyMonitor</string>
+    <string name="title_activity_main">PrivacyMonitor</string>
+    <string name="package_name">com.PrivacyMonitor.app</string>
+    <string name="custom_url_scheme">com.PrivacyMonitor.app</string>
+</resources>

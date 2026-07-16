@@ -1,0 +1,102 @@
+/* Global Reset Properties for Root Space Dimensions */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Sleek, light slate gray workspace backdrop */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-root-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global Application Header Bar */
+.app-global-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a; /* Deep charcoal security theme */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.nav-brand-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #f1f5f9;
+}
+
+/* Live Operational Pulse Node Asset */
+.security-pulse-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #10b981; /* Operational active emerald tint */
+  border-radius: 50%;
+  position: relative;
+}
+
+.security-pulse-indicator::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: telemetryPulse 2s infinite ease-in-out;
+}
+
+/* Network Sync Indicator Status Pill */
+.nav-system-status .status-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #94a3b8;
+}
+
+/* Main Display Canvas Section */
+.app-content-stage {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Operational Pulse Keyframe Drivers */
+@keyframes telemetryPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Mobile Alignment Adaptation Constraints */
+@media (max-width: 640px) {
+  .app-global-navbar {
+    padding: 1rem 1.25rem;
+  }
+  
+  .nav-title {
+    font-size: 1.1rem;
+  }
+}
